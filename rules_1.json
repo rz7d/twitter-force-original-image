@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "priority": 999,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "removeParams": ["format"],
+            "addOrReplaceParams": [
+              {
+                "key": "name",
+                "value": "orig"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "regexFilter": ".+/pbs.twimg.com/media/.+",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "xmlhttprequest",
+        "media"
+      ]
+    }
+  }
+]
