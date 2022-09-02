@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "manifest_version": 3,
   "description": "",
-  "permissions": ["declarativeNetRequest"],
+  "permissions": ["declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
   "host_permissions": ["*://pbs.twimg.com/*"],
   "declarative_net_request": {
     "rule_resources": [

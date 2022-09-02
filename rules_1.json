@@ -7,7 +7,6 @@
       "redirect": {
         "transform": {
           "queryTransform": {
-            "removeParams": ["format"],
             "addOrReplaceParams": [
               {
                 "key": "name",
@@ -19,15 +18,64 @@
       }
     },
     "condition": {
-      "regexFilter": ".+/pbs.twimg.com/media/.+",
+      "regexFilter": "^(.+/)?pbs\\.twimg\\.com/media/.+format=.+$",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
         "stylesheet",
         "script",
         "image",
+        "font",
+        "object",
         "xmlhttprequest",
-        "media"
+        "ping",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              {
+                "key": "name",
+                "value": "orig"
+              },
+              {
+                "key": "format",
+                "value": "jpg"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "regexFilter": "^(.+/)?pbs\\.twimg\\.com/media/.+$",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
       ]
     }
   }
